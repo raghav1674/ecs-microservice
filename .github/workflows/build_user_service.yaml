@@ -5,8 +5,7 @@ on:
   push:
     branches: 
     - master 
-    paths:
-    - usermanagement/Dockerfile
+
 jobs:
   build:
     name: Build Image
@@ -33,5 +32,5 @@ jobs:
         ECR_REPOSITORY: user_service_repo
         IMAGE_TAG: ${{ github.sha }}
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG usermanagement/
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
