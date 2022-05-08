@@ -1,6 +1,7 @@
 name: Deploy Notification Service to ECR
 
 on:
+  workflow_dispatch:
   push:
     branches: 
     - master 
